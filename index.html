@@ -3,43 +3,531 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echo Support</title>
+    <title>Echo Support - Help & Contact</title>
+    <meta name="description" content="Get help with Echo - the messaging app with AI agent marketplace. Contact support, browse FAQs, and learn how to use Echo.">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 { color: #007AFF; }
-        .contact { background: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0; }
+
+        :root {
+            --echo-blue: #007AFF;
+            --echo-blue-dark: #0051D5;
+            --echo-light: #E6F4FE;
+            --text-dark: #1d1d1f;
+            --text-gray: #6e6e73;
+            --border-color: #d2d2d7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--echo-blue) 0%, var(--echo-blue-dark) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .contact-card {
+            background: var(--echo-light);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--echo-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--echo-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            color: var(--text-dark);
+        }
+
+        .faq-item p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .faq-item ul {
+            margin: 15px 0;
+            padding-left: 20px;
+            color: var(--text-gray);
+        }
+
+        .faq-item li {
+            margin: 8px 0;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .quick-link {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            border-color: var(--echo-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.15);
+        }
+
+        .quick-link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .quick-link h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .quick-link p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .response-time {
+            display: inline-block;
+            background: #34C759;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #f5f5f7;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: var(--echo-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--echo-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 25px;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Echo Support</h1>
-    
-    <h2>Contact Us</h2>
-    <div class="contact">
-        <p><strong>Email:</strong> support@echo.social</p>
-        <p><strong>Response Time:</strong> Within 24-48 hours</p>
+    <header>
+        <h1>Echo Support</h1>
+        <p>We're here to help you get the most out of Echo</p>
+    </header>
+
+    <div class="container">
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-card">
+                <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 20px;">
+                    Our support team is ready to assist you with any questions or issues.
+                </p>
+                <div class="response-time">⚡ Response within 24-48 hours</div>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <h4>Email Support</h4>
+                            <p><a href="mailto:support@echo.social">support@echo.social</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🐛</div>
+                        <div class="contact-info">
+                            <h4>Report a Bug</h4>
+                            <p><a href="mailto:bugs@echo.social">bugs@echo.social</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">💡</div>
+                        <div class="contact-info">
+                            <h4>Feature Requests</h4>
+                            <p><a href="mailto:feedback@echo.social">feedback@echo.social</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section id="quick-links">
+            <h2>Quick Links</h2>
+            <div class="quick-links">
+                <a href="#faq" class="quick-link">
+                    <div class="quick-link-icon">❓</div>
+                    <h3>FAQ</h3>
+                    <p>Common questions answered</p>
+                </a>
+                
+                <a href="#agents" class="quick-link">
+                    <div class="quick-link-icon">🤖</div>
+                    <h3>AI Agents</h3>
+                    <p>Learn about agents</p>
+                </a>
+                
+                <a href="privacy.html" class="quick-link">
+                    <div class="quick-link-icon">🔒</div>
+                    <h3>Privacy Policy</h3>
+                    <p>How we protect your data</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What is Echo?</h3>
+                <p>Echo is a next-generation messaging app featuring an open AI agent marketplace. Chat with friends, create custom AI assistants, and enhance your conversations with intelligent automation.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 id="agents">How do I create an AI agent? <span class="badge">POPULAR</span></h3>
+                <p>Creating an AI agent is easy:</p>
+                <ul>
+                    <li>Tap the <strong>Agents</strong> tab at the bottom</li>
+                    <li>Tap the <strong>+ Create Agent</strong> button</li>
+                    <li>Enter a name and description for your agent</li>
+                    <li>Write a system prompt that defines your agent's personality and behavior</li>
+                    <li>Choose the agent type (AUTO or ON-CALL)</li>
+                    <li>Tap <strong>Create</strong> to deploy your agent</li>
+                </ul>
+                <p>No coding required! Your agent will be ready to use immediately.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's the difference between AUTO and ON-CALL agents?</h3>
+                <p><strong>AUTO Agents:</strong> These agents automatically respond to every message in conversations where they're activated. Perfect for customer support, moderation, or always-on assistance.</p>
+                <p><strong>ON-CALL Agents:</strong> These agents only respond when you specifically summon them by selecting them before sending a message. Great for specialized tasks or when you want control over when AI responds.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I add an agent to a conversation?</h3>
+                <p>For <strong>AUTO agents</strong>:</p>
+                <ul>
+                    <li>Open the conversation</li>
+                    <li>Tap the info/settings icon (top right)</li>
+                    <li>Select "Manage Agents"</li>
+                    <li>Toggle on the agent you want to activate</li>
+                </ul>
+                <p>For <strong>ON-CALL agents</strong>: They're automatically available in all conversations. Just select the agent from the agent menu before sending a message that requires their expertise.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I browse agents created by others?</h3>
+                <p>Yes! The Agent Marketplace features agents created by the Echo community:</p>
+                <ul>
+                    <li>Tap the <strong>Agents</strong> tab</li>
+                    <li>Switch to <strong>Marketplace</strong> view</li>
+                    <li>Browse by category or search for specific functionality</li>
+                    <li>Tap any agent to see details and add it to your collection</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I create a group conversation?</h3>
+                <p>To create a group:</p>
+                <ul>
+                    <li>Go to the <strong>Conversations</strong> tab</li>
+                    <li>Tap the <strong>+</strong> or <strong>New Group</strong> button</li>
+                    <li>Enter a group name and description</li>
+                    <li>Select members to add</li>
+                    <li>Tap <strong>Create</strong></li>
+                </ul>
+                <p>You can create subgroups within groups for better organization!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I make a voice call?</h3>
+                <p>Voice calling is easy:</p>
+                <ul>
+                    <li>Open a conversation</li>
+                    <li>Tap the phone icon at the top</li>
+                    <li>Wait for your contact to answer</li>
+                </ul>
+                <p>Voice calls use high-quality audio streaming for crystal-clear conversations.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete or archive a conversation?</h3>
+                <p>To archive: Swipe left on the conversation in your list and tap <strong>Archive</strong>.</p>
+                <p>To view archived conversations: Tap your profile → Settings → Archived Conversations.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is Jarvis?</h3>
+                <p>Jarvis is your personal AI assistant built into Echo. Jarvis can help you:</p>
+                <ul>
+                    <li>Manage your messages and conversations</li>
+                    <li>Check for unread messages</li>
+                    <li>Send messages on your behalf</li>
+                    <li>Get summaries of conversations</li>
+                    <li>Navigate the app with natural language</li>
+                </ul>
+                <p>Just chat with Jarvis like you would with a friend!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I use the calendar feature?</h3>
+                <p>Echo's integrated calendar helps you stay organized:</p>
+                <ul>
+                    <li>Tap the <strong>Calendar</strong> icon</li>
+                    <li>Tap <strong>+</strong> to create a new event</li>
+                    <li>Add event details (title, date, description)</li>
+                    <li>Save to track your upcoming activities</li>
+                </ul>
+                <p>View your event statistics and monthly summaries in the Stats section.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I post to my profile?</h3>
+                <p>Share your thoughts:</p>
+                <ul>
+                    <li>Go to your <strong>Profile</strong> tab</li>
+                    <li>Tap <strong>New Post</strong> or the <strong>+</strong> button</li>
+                    <li>Write your message (up to 2000 characters)</li>
+                    <li>Tap <strong>Publish</strong></li>
+                </ul>
+                <p>Your posts appear on your profile and are visible to your connections.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is Echo free to use?</h3>
+                <p>Yes! Echo is completely free to download and use. You can:</p>
+                <ul>
+                    <li>Send unlimited messages</li>
+                    <li>Make voice calls</li>
+                    <li>Create unlimited AI agents</li>
+                    <li>Join unlimited groups</li>
+                    <li>Access the full agent marketplace</li>
+                </ul>
+                <p>There are no subscriptions or hidden fees.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How is my data protected?</h3>
+                <p>We take your privacy seriously:</p>
+                <ul>
+                    <li>Secure JWT authentication for all connections</li>
+                    <li>Your messages are transmitted securely</li>
+                    <li>We never sell your data to advertisers</li>
+                    <li>You control who can see your profile and posts</li>
+                    <li>You can block unwanted users at any time</li>
+                </ul>
+                <p>Read our full <a href="privacy.html">Privacy Policy</a> for details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>I found a bug. How do I report it?</h3>
+                <p>We appreciate bug reports! Please email us at <a href="mailto:bugs@echo.social">bugs@echo.social</a> with:</p>
+                <ul>
+                    <li>A description of the issue</li>
+                    <li>Steps to reproduce the bug</li>
+                    <li>Your device model and iOS version</li>
+                    <li>Screenshots if applicable</li>
+                </ul>
+                <p>We'll investigate and fix it as quickly as possible.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete my account?</h3>
+                <p>To delete your account:</p>
+                <ul>
+                    <li>Go to <strong>Profile</strong> → <strong>Settings</strong></li>
+                    <li>Scroll to <strong>Account</strong> section</li>
+                    <li>Tap <strong>Delete Account</strong></li>
+                    <li>Confirm deletion</li>
+                </ul>
+                <p>Note: This action is permanent and cannot be undone. All your data, messages, and agents will be deleted.</p>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section id="getting-started">
+            <h2>Getting Started with Echo</h2>
+            <div class="faq-item">
+                <h3>New to Echo? Here's how to get started:</h3>
+                <ul>
+                    <li><strong>Step 1:</strong> Create your account and set up your profile</li>
+                    <li><strong>Step 2:</strong> Add friends by sending connection requests</li>
+                    <li><strong>Step 3:</strong> Start a conversation or create a group</li>
+                    <li><strong>Step 4:</strong> Explore the Agent Marketplace and add helpful AI agents</li>
+                    <li><strong>Step 5:</strong> Create your first custom agent to automate tasks</li>
+                </ul>
+                <p>Need help? Contact us at <a href="mailto:support@echo.social">support@echo.social</a></p>
+            </div>
+        </section>
     </div>
-    
-    <h2>Frequently Asked Questions</h2>
-    
-    <h3>How do I create an AI agent?</h3>
-    <p>Tap the Agents tab, then tap "Create Agent". Enter a name, description, and system prompt to define your agent's behavior.</p>
-    
-    <h3>What's the difference between AUTO and ON-CALL agents?</h3>
-    <p>AUTO agents respond to every message in conversations where they're activated. ON-CALL agents only respond when you specifically summon them.</p>
-    
-    <h3>How do I delete a conversation?</h3>
-    <p>Swipe left on the conversation in your list and tap Archive.</p>
-    
-    <h3>How do I report a problem?</h3>
-    <p>Email us at support@echo.social with details about the issue.</p>
-    
-    <h2>Privacy Policy</h2>
-    <p><a href="privacy.html">View our Privacy Policy</a></p>
+
+    <footer>
+        <p><strong>Echo</strong> - The messaging app with AI agent marketplace</p>
+        <p>© 2025 Echo Social. All rights reserved.</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> • 
+            <a href="mailto:support@echo.social">Contact Support</a> • 
+            <a href="#top">Back to Top</a>
+        </p>
+    </footer>
 </body>
 </html>
