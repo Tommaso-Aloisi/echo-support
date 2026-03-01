@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echo Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,30 +16,34 @@
         }
 
         :root {
-            --echo-blue: #007AFF;
-            --echo-blue-dark: #0051D5;
-            --text-dark: #1d1d1f;
-            --text-gray: #6e6e73;
-            --border-color: #d2d2d7;
+            --primary: #2D8A6E;
+            --primary-hover: #236B55;
+            --bg-mint-light: #E8F4EF;
+            --bg-mint-muted: #D4E8DF;
+            --text-dark: #1A3D32;
+            --text-gray: #4A6D62;
+            --border-color: rgba(26, 61, 50, 0.1);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             line-height: 1.7;
             background: #ffffff;
         }
 
         header {
-            background: linear-gradient(135deg, var(--echo-blue) 0%, var(--echo-blue-dark) 100%);
-            color: white;
+            background: var(--bg-mint-muted);
+            color: var(--text-dark);
             padding: 50px 20px;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
             margin-bottom: 10px;
         }
 
@@ -90,7 +97,7 @@
         }
 
         a {
-            color: var(--echo-blue);
+            color: var(--primary);
             text-decoration: none;
         }
 
@@ -101,12 +108,12 @@
         .back-link {
             display: inline-block;
             margin-bottom: 30px;
-            color: var(--echo-blue);
+            color: var(--primary);
             font-weight: 600;
         }
 
         footer {
-            background: #f5f5f7;
+            background: var(--bg-mint-light);
             padding: 30px 20px;
             text-align: center;
             margin-top: 60px;
@@ -114,7 +121,7 @@
         }
 
         footer p {
-            color: var(--text-gray);
+            color: var(--text-dark);
             margin: 5px 0;
         }
     </style>
@@ -267,22 +274,33 @@
             safeguards are in place to protect your data in accordance with this Privacy Policy.</p>
 
         <h2>Third-Party AI Services (Mistral AI)</h2>
-        <p>Echo integrates artificial intelligence features powered by a third-party provider, <strong>Mistral AI</strong> (based in France/EU). To provide these features, we must share specific data with them.</p>
+        <p>Echo integrates artificial intelligence features powered by a third-party provider, <strong>Mistral
+                AI</strong> (based in France/EU). To provide these features, we must share specific data with them.</p>
 
         <h3>What Data is Sent</h3>
-        <p>When you use AI features, Echo may send the following to Mistral AI: (1) text messages you send to Jarvis or AI agents, (2) voice messages you send to Jarvis (audio + transcription), and (3) limited conversation context required to generate a relevant response. Your account registration data (name, email, password, profile photo) is <strong>never</strong> shared with Mistral AI.</p>
-        
+        <p>When you use AI features, Echo may send the following to Mistral AI: (1) text messages you send to Jarvis or
+            AI agents, (2) voice messages you send to Jarvis (audio + transcription), and (3) limited conversation
+            context required to generate a relevant response. Your account registration data (name, email, password,
+            profile photo) is <strong>never</strong> shared with Mistral AI.</p>
+
         <h3>Who the Data is Sent To</h3>
         <p>The data is sent securely to <strong>Mistral AI</strong>.</p>
-        
-        <h3>How the Data is Used</h3>
-        <p>This data is processed by Mistral AI strictly for the purpose of generating AI responses to your queries. Mistral AI processes your data within the European Union in compliance with the GDPR and applies a level of data protection equivalent to ours.</p>
-        
-        <h3>User Consent</h3>
-        <p>Echo requests your explicit, in-app permission during onboarding/login (CGU/EULA acceptance) before use of AI features and before AI-related data is sent to Mistral AI. If you do not grant permission, access to AI features remains disabled.</p>
-        <p>You can withdraw consent by contacting us at <a href="mailto:echosocialaimarketplace@gmail.com">echosocialaimarketplace@gmail.com</a>. After withdrawal, we disable AI features for your account until consent is granted again.</p>
 
-        <p>Learn more about Mistral AI's data practices: <a href="https://mistral.ai/terms/" target="_blank">Mistral AI Privacy Policy</a></p>
+        <h3>How the Data is Used</h3>
+        <p>This data is processed by Mistral AI strictly for the purpose of generating AI responses to your queries.
+            Mistral AI processes your data within the European Union in compliance with the GDPR and applies a level of
+            data protection equivalent to ours.</p>
+
+        <h3>User Consent</h3>
+        <p>Echo requests your explicit, in-app permission during onboarding/login (CGU/EULA acceptance) before use of AI
+            features and before AI-related data is sent to Mistral AI. If you do not grant permission, access to AI
+            features remains disabled.</p>
+        <p>You can withdraw consent by contacting us at <a
+                href="mailto:echosocialaimarketplace@gmail.com">echosocialaimarketplace@gmail.com</a>. After withdrawal,
+            we disable AI features for your account until consent is granted again.</p>
+
+        <p>Learn more about Mistral AI's data practices: <a href="https://mistral.ai/terms/" target="_blank">Mistral AI
+                Privacy Policy</a></p>
 
         <h2>Updates to This Privacy Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we make changes, we will:</p>
