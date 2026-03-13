@@ -155,6 +155,12 @@
             <li><strong>Messages:</strong> Content of messages you send and receive through the App</li>
             <li><strong>AI Agent Data:</strong> AI agents you create, including names, descriptions, system prompts, and
                 configurations</li>
+            <li><strong>Connected Service Data:</strong> Data made available when you choose to connect a third-party
+                account or service to an agent or automation, which may include account identifiers, messages, emails,
+                files, calendar items, contacts, metadata, and other content permitted by the scopes or permissions you
+                approve</li>
+            <li><strong>Agent Activity Records:</strong> Prompts, commands, summaries, results, execution logs, and
+                other records describing actions requested by you or performed by agents on connected services</li>
             <li><strong>Calendar Data:</strong> Events you create and manage in the integrated calendar</li>
             <li><strong>Voice Calls:</strong> Metadata about voice calls (duration, participants, timestamps) but not
                 call content</li>
@@ -176,7 +182,10 @@
         <ul>
             <li>Provide, maintain, and improve the App's functionality</li>
             <li>Enable messaging, voice calls, and group conversations</li>
-            <li>Process and deliver AI agent responses using third-party AI services (Mistral AI)</li>
+            <li>Connect user-authorized third-party accounts and services to agents or automations</li>
+            <li>Access, process, and act on data from connected services within the permissions granted by the user</li>
+            <li>Process and deliver AI agent responses using third-party AI services</li>
+            <li>Generate summaries, logs, and results of agent actions performed in Echo or on connected services</li>
             <li>Personalize your experience and provide relevant content</li>
             <li>Send you notifications about messages, friend requests, and app updates</li>
             <li>Maintain the security and integrity of the App</li>
@@ -201,8 +210,13 @@
         <h3>With Service Providers</h3>
         <p>We share information with third-party service providers who perform services on our behalf:</p>
         <ul>
-            <li><strong>Mistral AI:</strong> AI agent messages are sent to Mistral AI for processing and generating
-                responses. Mistral AI processes this data according to their privacy policy</li>
+            <li><strong>AI Providers (including Mistral AI):</strong> AI agent messages, voice inputs, connected-service
+                context, and related task data may be sent to AI providers to interpret requests, generate responses,
+                and produce summaries or results. These providers process data according to their own applicable terms
+                and privacy policies</li>
+            <li><strong>Connected Third-Party Services Authorized by the User:</strong> When you connect a third-party
+                account or service, Echo and its agents may exchange data with that service to read, create, modify,
+                send, organize, or delete content, or perform other actions within the permissions you approved</li>
             <li><strong>Firebase:</strong> For push notifications and authentication services</li>
             <li><strong>LiveKit:</strong> For voice call infrastructure and real-time communication</li>
             <li><strong>Cloud Hosting:</strong> For data storage and app infrastructure (Railway)</li>
@@ -220,8 +234,12 @@
         <ul>
             <li><strong>Account Data:</strong> Retained until you delete your account</li>
             <li><strong>Messages:</strong> Stored indefinitely unless you delete them</li>
-            <li><strong>AI Agent Responses:</strong> Response metadata is stored; actual AI-generated content may be
-                processed but not permanently stored by third parties</li>
+            <li><strong>AI Agent Responses:</strong> Response metadata, summaries, and task results may be stored;
+                actual AI-generated or third-party-derived content may also be stored when needed to provide the
+                feature you used</li>
+            <li><strong>Connected Service Data:</strong> Depending on the feature, Echo may store linked account
+                identifiers, selected synced content, action logs, and summaries of actions performed on connected
+                services</li>
             <li><strong>Deleted Data:</strong> Deleted data is removed from active systems within 30 days but may
                 persist in backups for up to 90 days</li>
         </ul>
@@ -234,6 +252,8 @@
             <li><strong>Privacy Controls:</strong> Control who can see your profile and send you messages</li>
             <li><strong>Block Users:</strong> Block users to prevent them from contacting you</li>
             <li><strong>Archive Conversations:</strong> Archive conversations to hide them from your main list</li>
+            <li><strong>Connected Accounts:</strong> Disconnect third-party accounts or services from within the App
+                when that option is available, and revoke access from the third-party provider's settings if needed</li>
             <li><strong>Delete Content:</strong> Delete messages, posts, and AI agents you've created</li>
         </ul>
 
@@ -273,28 +293,49 @@
         <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate
             safeguards are in place to protect your data in accordance with this Privacy Policy.</p>
 
-        <h2>Third-Party AI Services (Mistral AI)</h2>
-        <p>Echo integrates artificial intelligence features powered by a third-party provider, <strong>Mistral
-                AI</strong> (based in France/EU). To provide these features, we must share specific data with them.</p>
+        <h2>Connected Third-Party Services and AI Providers</h2>
+        <p>Echo allows users to connect third-party accounts and services to agents or automations they choose to
+            enable. Echo also integrates artificial intelligence features powered by third-party providers, including
+            <strong>Mistral AI</strong> (based in France/EU). To provide these features, Echo may access, process,
+            exchange, and store certain data within the permissions granted by the user.</p>
 
-        <h3>What Data is Sent</h3>
-        <p>When you use AI features, Echo may send the following to Mistral AI: (1) text messages you send to Jarvis or
-            AI agents, (2) voice messages you send to Jarvis (audio + transcription), and (3) limited conversation
-            context required to generate a relevant response. Your account registration data (name, email, password,
-            profile photo) is <strong>never</strong> shared with Mistral AI.</p>
+        <h3>How Connected Services Work</h3>
+        <p>When you connect a third-party service, you authorize Echo to access that service through APIs, OAuth, or
+            similar authorization mechanisms initiated by you. Depending on the permissions you approve, an agent may
+            read data from the connected service, create, modify, send, classify, or delete content, or perform other
+            actions on your behalf within the scope of your authorization.</p>
+
+        <h3>What Data May Be Accessed or Exchanged</h3>
+        <p>Depending on the connected service and the permissions you approve, Echo and its agents may access or
+            exchange account identifiers, emails, messages, files, calendar items, contacts, metadata, prompts,
+            instructions, execution logs, summaries, and task results.</p>
+
+        <h3>What Data May Be Sent to AI Providers</h3>
+        <p>When you use AI features, Echo may send to AI providers: (1) text messages you send to Jarvis or AI agents,
+            (2) voice messages you send to Jarvis (audio + transcription), (3) limited conversation context required
+            to generate a relevant response, and (4) selected data from connected services when necessary to complete a
+            user-requested task, produce a summary, or return a result in Echo. Your account registration data
+            (name, email, password, profile photo) is <strong>not</strong> sent to AI providers unless explicitly
+            required for a disclosed feature.</p>
 
         <h3>Who the Data is Sent To</h3>
-        <p>The data is sent securely to <strong>Mistral AI</strong>.</p>
+        <p>Data may be exchanged with: (1) the third-party services that you explicitly choose to connect and authorize,
+            and (2) AI providers used by Echo, including <strong>Mistral AI</strong>.</p>
 
         <h3>How the Data is Used</h3>
-        <p>This data is processed by Mistral AI strictly for the purpose of generating AI responses to your queries.
-            Mistral AI processes your data within the European Union in compliance with the GDPR and applies a level of
-            data protection equivalent to ours.</p>
+        <p>This data is used to authenticate connected accounts, execute tasks you request, generate AI responses,
+            perform actions on connected services within your authorization, and produce summaries, logs, and results in
+            Echo. Mistral AI processes relevant AI data within the European Union in compliance with the GDPR and
+            applies a level of data protection equivalent to ours.</p>
 
         <h3>User Consent</h3>
-        <p>Echo requests your explicit, in-app permission during onboarding/login (CGU/EULA acceptance) before use of AI
-            features and before AI-related data is sent to Mistral AI. If you do not grant permission, access to AI
-            features remains disabled.</p>
+        <p>Echo requests your explicit, in-app permission through the CGU/EULA flow before AI-related data is sent to
+            Mistral AI. For new users, this happens during account creation. Existing users are only asked again if
+            they have not yet accepted the CGU/EULA or if the CGU/EULA is materially updated. If you do not grant
+            permission, access to AI features remains disabled.</p>
+        <p>When you connect a third-party service, that service may also present its own consent or authorization screen
+            describing the permissions you are granting. You should review those permissions carefully before
+            authorizing the connection.</p>
         <p>You can withdraw consent by contacting us at <a
                 href="mailto:echosocialaimarketplace@gmail.com">echosocialaimarketplace@gmail.com</a>. After withdrawal,
             we disable AI features for your account until consent is granted again.</p>
